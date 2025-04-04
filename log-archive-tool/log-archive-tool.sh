@@ -36,14 +36,21 @@ find $log_dir -type f -mtime +90 ! -path "$dest_dir/*" -print0 | tar -czvf "$fil
 echo -e "JOB FINISHED \n\nFile location: \n$file_path\n"
 
 # upload to remote location (s3)
-# touch $file_path (used for testing s3 upload without the need to archive)
-echo "Please ensure AWS CLI is installed and AWS credentials are configured."
-read -p "Please mention S3 bucket path(e.g. name/path): " bucket_path
-upload_output=$(/usr/local/bin/aws s3 cp "$file_path" "s3://$bucket_path" 2>&1)
-if [ $? -ne 0 ]; then
-	echo -e "\nFailed to upload to S3."
-	echo -e "Error message:\n"
-	echo -e "$upload_output\n"
-else
-	echo "Archive successfully uploaded to S3"
-fi
+upload_to_s3() {
+        read -r -p "Do you want to upload the archive to S3? (y/n) " choice
+        if [[ "$choice" == "y" || "$choice" == "Y" ]]; then
+                echo "Please ensure AWS CLI is installed and AWS credentials are configured."
+                read -p "Please mention S3 bucket path(e.g. name/path): " bucket_path
+                upload_output=$(/usr/local/bin/aws s3 cp "$file_path" "s3://$bucket_path" 2>&1)
+                if [ $? -ne 0 ]; then
+                        echo -e "\nFailed to upload to S3."
+                        echo -e "Error message:\n"
+                        echo -e "$upload_output\n"
+                else
+                        echo "Archive successfully uploaded to S3"
+                fi
+        else
+                echo "Archive not uploaded to S3"
+        fi
+}
+upload_to_s3
