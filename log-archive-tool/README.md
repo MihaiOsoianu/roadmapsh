@@ -1,5 +1,5 @@
 # Log Archive Tool
-A bash script to archive files older than 90 days inside a directory specified by the user. The script also saves the archive to a S3 bucket.
+A bash script to archive files older than 90 days inside a directory specified by the user. The script also has the option to save the archive to a S3 bucket. This script does not delete the original files, but to do that you can use `--remove-files` flag for `tar` command.
 
 ## Getting Started
 1. **Clone the repository**
