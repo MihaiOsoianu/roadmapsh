@@ -16,6 +16,6 @@ A bash script that goes through a sample nginx access log file and prints top 5 
     ```
     ./nginx-log-analyser.sh
     ```
-![Imgur](https://imgur.com/0bbgebR)
+![Imgur](https://imgur.com/0bbgebR.png)
 
 Check the project requirements at [roadmap.sh](https://roadmap.sh/projects/nginx-log-analyser)
