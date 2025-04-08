@@ -1,0 +1,27 @@
+name: GitHub Pages Deployment Project
+run-name: ${{ github.actor }} deployed a new version of the page
+on:
+    push:
+        paths:
+            - '.github/workflows/deploy.yml'
+            - 'gh-deployment-workflow/index.html'
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: https://mihaiosoianu.github.io/gh-deployment-workflow/
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload entire repository
+          path: 'gh-deployment-workflow/index.html'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
