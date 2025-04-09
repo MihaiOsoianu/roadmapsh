@@ -7,3 +7,4 @@
 5. [SSH Remote Server Setup](https://roadmap.sh/projects/ssh-remote-server-setup) (COMPLETED)
 6. [Static Site Server](https://roadmap.sh/projects/static-site-server) (COMPLETED)
 7. [Basic DNS Setup](https://roadmap.sh/projects/basic-dns) (COMPLETED)
+8. [Dummy Systemd Service](https://roadmap.sh/projects/dummy-systemd-service) (COMPLETED)

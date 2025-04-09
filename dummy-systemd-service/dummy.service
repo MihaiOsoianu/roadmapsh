@@ -1,0 +1,13 @@
+[Unit]
+Description=Dummy Systemd Service
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/dummy.sh
+Restart=always
+RestartSec=5
+StandardOutput=append:/var/log/dummy-service.log
+StandardError=append:/var/log/dummy-service.log
+
+[Install]
+WantedBy=multi-user.target
