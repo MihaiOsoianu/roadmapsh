@@ -1,0 +1,5 @@
+- name: Upload website tarball
+  copy: src=files/site.tar.gz dest=/var/www/html/site.tar.gz
+
+- name: Extract website
+  unarchive: src=/var/www/html/site.tar.gz dest=/var/www/html/ remote_src=yes

@@ -1,0 +1,15 @@
+- name: Install nginx
+  amazon-linux-extras:
+    name: nginx1
+    state: enabled
+
+- name: Install nginx package
+  yum:
+    name: nginx
+    state: present
+
+- name: Start nginx
+  service:
+    name: nginx
+    state: started
+    enabled: yes

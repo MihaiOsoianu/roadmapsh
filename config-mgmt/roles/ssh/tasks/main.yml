@@ -1,0 +1,11 @@
+- name: Create .ssh directory
+  file:
+    path: /home/{{ ansible_user }}/.ssh
+    state: directory
+    owner: "{{ ansible_user }}"
+    mode: 0700
+
+- name: Add public key
+  authorized_key:
+    user: "{{ ansible_user }}"
+    key: "ssh-rsa AAAA..."
