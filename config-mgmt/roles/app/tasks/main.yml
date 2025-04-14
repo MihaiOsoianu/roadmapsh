@@ -1,5 +1,15 @@
-- name: Upload website tarball
-  copy: src=files/site.tar.gz dest=/var/www/html/site.tar.gz
+- name: Clone full repo
+  git:
+    repo: https://github.com/MihaiOsoianu/roadmapsh.git
+    dest: /tmp/temp-repo
 
-- name: Extract website
-  unarchive: src=/var/www/html/site.tar.gz dest=/var/www/html/ remote_src=yes
+- name: Copy subdirectory to web root
+  copy:
+    src: /tmp/temp-repo/config-mgmt/site/
+    dest: /var/www/html/
+    remote_src: yes
+
+- name: Clean up temp clone
+  file:
+    path: /tmp/temp-repo
+    state: absent

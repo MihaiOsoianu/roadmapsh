@@ -8,4 +8,4 @@
 - name: Add public key
   authorized_key:
     user: "{{ ansible_user }}"
-    key: "ssh-rsa AAAA..."
+    key: "{{ lookup('file', '/path/to/key') }}"

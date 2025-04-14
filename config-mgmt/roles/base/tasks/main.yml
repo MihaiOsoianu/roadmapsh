@@ -8,17 +8,11 @@
     name: "{{ item }}"
     state: present
   loop:
-    - curl
     - vim
     - git
     - firewalld
 
 - name: Install fail2ban
-  yum:
-    name: epel-release
-    state: present
-
-- name: Install fail2ban from EPEL
   yum:
     name: fail2ban
     state: present
@@ -29,3 +23,9 @@
     state: started
     enabled: yes
 
+- name: Allow HTTP through firewalld
+  firewalld:
+    port: 80/tcp
+    permanent: yes
+    state: enabled
+    immediate: yes
