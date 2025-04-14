@@ -9,3 +9,4 @@
 7. [Basic DNS Setup](https://roadmap.sh/projects/basic-dns) (COMPLETED)
 8. [Dummy Systemd Service](https://roadmap.sh/projects/dummy-systemd-service) (COMPLETED)
 9. [Basic Dockerfile](https://roadmap.sh/projects/basic-dockerfile) (COMPLETED)
+10. [Configuration Management](https://roadmap.sh/projects/configuration-management) (COMPLETED)
