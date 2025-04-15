@@ -1,0 +1,15 @@
+- name: Clone full repo
+  git:
+    repo: https://github.com/MihaiOsoianu/roadmapsh.git
+    dest: /tmp/temp-repo
+
+- name: Copy subdirectory to web root
+  copy:
+    src: /tmp/temp-repo/config-mgmt/site/
+    dest: /usr/share/nginx/html
+    remote_src: yes
+
+- name: Clean up temp clone
+  file:
+    path: /tmp/temp-repo
+    state: absent
