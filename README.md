@@ -10,4 +10,4 @@
 8. [Dummy Systemd Service](https://roadmap.sh/projects/dummy-systemd-service) (COMPLETED) beginner
 9. [Basic Dockerfile](https://roadmap.sh/projects/basic-dockerfile) (COMPLETED) beginner
 10. [Configuration Management](https://roadmap.sh/projects/configuration-management) (COMPLETED) intermediate
-11. [IaC on AWS](https://roadmap.sh/projects/iac-digitalocean) (COMPLETED) intermediate
+11. [IaC on AWS](https://roadmap.sh/projects/iac-digitalocean) (COMPLETED) intermediate hi
